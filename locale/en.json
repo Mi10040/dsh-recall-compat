@@ -1,0 +1,9 @@
+{
+  "meta": {
+    "title": "Recall — conversation history search",
+    "description": "Searches the original text of past sessions (literal, fuzzy, and local semantic retrieval) and injects a compaction anchor, fully offline."
+  },
+  "recalling": "Recalling…",
+  "done": "Recall complete",
+  "failed": "Recall failed"
+}

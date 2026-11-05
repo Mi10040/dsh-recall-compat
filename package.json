@@ -1,0 +1,54 @@
+{
+  "name": "dsh-recall",
+  "version": "0.2.2-compat.2",
+  "description": "Conversation history recall for DeepSeek Harness (0.2.x-compatible fork of dsh-recall@0.2.2): search the original text of every session — literal/fuzzy/semantic retrieval, fully local & offline.",
+  "type": "module",
+  "main": "lib/index.js",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "files": [
+    "lib",
+    "models/model_merged.onnx",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "recall",
+    "memory",
+    "history",
+    "search",
+    "semantic-search",
+    "cordis"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Relistencode/dsh-recall.git"
+  }
+}
