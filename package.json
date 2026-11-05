@@ -1,6 +1,6 @@
 {
   "name": "dsh-recall",
-  "version": "0.2.2-compat.2",
+  "version": "0.2.2-compat.3",
   "description": "Conversation history recall for DeepSeek Harness (0.2.x-compatible fork of dsh-recall@0.2.2): search the original text of every session — literal/fuzzy/semantic retrieval, fully local & offline.",
   "type": "module",
   "main": "lib/index.js",

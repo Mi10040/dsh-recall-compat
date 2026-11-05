@@ -1,4 +1,4 @@
-# dsh-recall (0.2.2-compat.2)
+# dsh-recall (0.2.2-compat.3)
 
 A compatibility fork of `dsh-recall@0.2.2` for the **current DeepSeek Harness
 0.2.x Host Service surface** (verified against `dsh 0.2.1-rc.5`).
@@ -37,6 +37,15 @@ The first report also primes the index (a throttled reconcile), so the numbers
 are real even before the `recall` tool has ever run. Settings live in
 `<dsh home>/storages/recall-settings.json` and are re-read per recall and per
 warm-up tick, so a switch takes effect without restarting `dsh web`.
+
+The routes are registered inside `ctx.inject(['webServer', 'connection'], …)`:
+the Loader activates entries concurrently, and on a cold `dsh web` boot the
+webserver and browser-connection rows can finish mounting *after* this plugin
+applies. Reading `ctx.get('webServer')` once at apply time silently skipped the
+routes (the Settings page then showed HTTP 404 until a plugin reload). The
+Cordis dependency injection keeps the callback pending until both services
+exist, so the page works on every boot — and the bundle still loads fine in
+compositions that never mount a Web server.
 
 After installing or updating the **client half**, refresh the Web page once
 (the browser caches the served client module); Host code changes need a
